@@ -10,7 +10,7 @@ export function DefaultInput({
   ...rest
 }: DefaultInputProps) {
   return (
-    <div className=" flex justify-center flex-col text-white">
+    <div className=" flex justify-center flex-col text-white  font-bold ">
       {labelText && <label htmlFor={id}>{labelText}</label>}
       <input id={id} type={type} {...rest} />
     </div>
