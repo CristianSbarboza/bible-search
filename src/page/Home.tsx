@@ -81,9 +81,9 @@ export function Home(){
 
 
     return(
-        <div className="p-5">
+        <div className="p-5 bg-[url('/img/backGroundBible.jpg')] bg-cover bg-center w-screen h-screen">
             <form onSubmit={handleSubmit} className="flex flex-col p-10 items-center gap-10">
-                <DefaultSelect value={bookName} onChange={e => setBookName(e.target.value)} labelText="Livro:">
+                <DefaultSelect value={bookName} onChange={e => setBookName(e.target.value)} labelText="Livro:" >
                     {BibleBooks.map((book, index)=>(
                         <option value={book.name} key={index} className="text-xs">{book.name.toUpperCase()}</option>
                     ))}   
@@ -113,7 +113,7 @@ export function Home(){
                 </section>
             )}
 
-            <section  className="items-center flex justify-center mt-[2rem] ">
+            <section  className="items-center flex justify-center mt-[2rem] p-2 bg-purple-50">
                 {apiResult && <p className="text-2xl">{apiResult}</p>}
             </section>
         </div>

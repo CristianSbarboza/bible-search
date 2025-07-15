@@ -11,7 +11,7 @@ type DefaultSelectProps = {
 export function DefaultSelect({children, labelText, id, value, onChange, ...rest}: DefaultSelectProps) {
 
   return (
-    <div className=" flex justify-center flex-col">
+    <div className=" flex justify-center flex-col text-white">
       {labelText && <label htmlFor={id}>{labelText}</label>}
       <select value={value} onChange={onChange} {...rest}>
         {children}
