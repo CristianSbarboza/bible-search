@@ -57,7 +57,7 @@ export function Home() {
     const verse = Number(bookVerse) - 1;
 
     if (verse < 1) {
-        showMessage.info('Primeiro versiculo!')
+        showMessage.info('Você está no primeiro versiculo!')
         return
     };
     setBookVerse(String(verse));
