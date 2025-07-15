@@ -3,6 +3,7 @@ import { DefaultInput } from '../components/DefaultInput';
 import { DefaultSelect } from '../components/DefaultSelect';
 import { BibleBooks } from '../utils/BlibleBooks';
 import { GetApi } from '../services/GetApi';
+import { showMessage } from '../adapters/showMessage';
 
 export function Home() {
   const [bookName, setBookName] = useState('Gênesis');
@@ -23,6 +24,7 @@ export function Home() {
 
       if (!response) {
         setApiResult(null);
+        showMessage.error('Versiculo não encontrado')
         return;
       }
 
@@ -41,6 +43,7 @@ export function Home() {
 
       if (!response) {
         setApiResult(null);
+        showMessage.info('Último versiculo!')
         return;
       }
 
@@ -53,7 +56,10 @@ export function Home() {
   async function backVerse() {
     const verse = Number(bookVerse) - 1;
 
-    if (verse < 1) return;
+    if (verse < 1) {
+        showMessage.info('Primeiro versiculo!')
+        return
+    };
     setBookVerse(String(verse));
 
     try {
